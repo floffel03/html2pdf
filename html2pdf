@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var path = require('path'),
+    spawn = require('child_process').spawn;
+
+console.log('\x1B[36m: ☃ INFO ☃ :\x1B[39m ~~ yes this is html2pdf ~~');
+console.log('\x1B[36m: ☃ INFO ☃ :\x1B[39m spawning phantomjs...');
+
+var html2pdf = spawn('phantomjs', [path.join(__dirname, 'html2pdf.js')].concat(process.argv.slice(2)));
+
+html2pdf.stdout.pipe(process.stdout);
+html2pdf.stderr.pipe(process.stderr);
+
