@@ -16,8 +16,6 @@ log = function (prefix) {
 log.info = log('\x1B[36m: ☃ INFO ☃ :\x1B[39m');
 log.error = log('\x1B[35m: ⚠ ERROR ⚠ :\x1B[39m');
 
-log.info('~~ yes this is html2pdf ~~');
-
 if (!argv.url || !argv.output) {
   log.error('You need to specify a url and output file.');
   log.error('Example: `$ html2pdf --url http://google.com --output google.pdf`');
